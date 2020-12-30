@@ -1,12 +1,15 @@
 from flask import Flask, render_template, url_for, redirect, request
 import requests
 
+
+#flask request is for user input 
 app = Flask(__name__)
 app.config["DEBUG"] = True
 
 @app.route("/")
 def show_landing_page():
     return render_template("landing-page.html")
+
 
 @app.route("/search", methods=['POST'])
 def form_submit():
@@ -20,7 +23,7 @@ def search_imdb(query_string):
     url = "https://imdb8.p.rapidapi.com/title/auto-complete"
     querystring = {"q": query_string}
     headers = {
-        'x-rapidapi-key': "<API KEY HERE>",
+        'x-rapidapi-key': "c1f754452cmsh587c261dca682aap1d207bjsna0eccbc768d6",
         'x-rapidapi-host': "imdb8.p.rapidapi.com"
     }
     try:
